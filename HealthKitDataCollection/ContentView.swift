@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let healthStore = HealthStore()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Button(action: {
+            healthStore.isAvailable()
+        }, label: {
+            Text("Is HealthKit available?")
+        })
     }
 }
 
