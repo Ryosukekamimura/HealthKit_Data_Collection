@@ -35,13 +35,13 @@ struct GraphView: View {
                     VStack {
                         Text("\(step.count)")
                             .font(.caption)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.black)
                         Rectangle()
-                            .fill(step.count > 10000 ? Color.green :Color.red)
+                            .fill(Color.black)
                             .frame(width: 20, height: CGFloat(yValue))
                         Text("\(step.date,formatter: Self.dateFormatter)")
                             .font(.caption)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.black)
                     }
                 }
                 
@@ -52,7 +52,7 @@ struct GraphView: View {
                 .opacity(0.5)
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(#colorLiteral(red: 0.2471546233, green: 0.4435939193, blue: 0.8302586079, alpha: 1)))
+        .background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
         .cornerRadius(10)
         .padding(10)
     }
