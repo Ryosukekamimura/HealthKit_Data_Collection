@@ -29,7 +29,21 @@ struct ContentView: View {
             
             let step = Step(count: Int(count ?? 0), date: statistics.startDate)
             steps.append(step)
+            
         }
+        
+        // Write to Json
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        encoder.outputFormatting = .prettyPrinted
+        do{
+            let data = try encoder.encode(steps)
+            let jsonstr :String = String(data: data, encoding: .utf8)!
+            print(jsonstr)
+        }catch{
+            print(error.localizedDescription)
+        }
+        
         
     }
     
@@ -37,7 +51,16 @@ struct ContentView: View {
         
         NavigationView {
         
-            GraphView(steps: steps)
+            VStack{
+                GraphView(steps: steps)
+                Button(action: {
+                    
+                }, label: {
+                    Text("Export Json File")
+                })
+            }
+
+            
             
         .navigationTitle("Just Walking")
         }
@@ -51,6 +74,8 @@ struct ContentView: View {
                                 if let statisticsCollection = statisticsCollection {
                                     // update the UI
                                     updateUIFromStatistics(statisticsCollection)
+                                    
+                                    
                                 }
                             }
                         }

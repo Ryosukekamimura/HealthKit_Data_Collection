@@ -19,6 +19,7 @@
 		92532DAB253D407100ECADE3 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92532DAA253D407100ECADE3 /* HealthStore.swift */; };
 		92532E2C253E794400ECADE3 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92532E2B253E794400ECADE3 /* Step.swift */; };
 		928DA5452540059100C92635 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DA5442540059100C92635 /* GraphView.swift */; };
+		928DA55025401B5600C92635 /* ExportJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DA54F25401B5600C92635 /* ExportJson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		92532DAA253D407100ECADE3 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		92532E2B253E794400ECADE3 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		928DA5442540059100C92635 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		928DA54F25401B5600C92635 /* ExportJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportJson.swift; sourceTree = "<group>"; };
+		928DA55425402D9800C92635 /* output.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = output.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 				92532D68253D3DD400ECADE3 /* AppDelegate.swift */,
 				92532D6A253D3DD400ECADE3 /* SceneDelegate.swift */,
 				92532D6C253D3DD400ECADE3 /* ContentView.swift */,
+				928DA55425402D9800C92635 /* output.json */,
 				92532E2B253E794400ECADE3 /* Step.swift */,
 				92532DAA253D407100ECADE3 /* HealthStore.swift */,
 				92532D6E253D3DD600ECADE3 /* Assets.xcassets */,
@@ -121,6 +125,7 @@
 				92532D76253D3DD600ECADE3 /* Info.plist */,
 				92532D70253D3DD600ECADE3 /* Preview Content */,
 				928DA5442540059100C92635 /* GraphView.swift */,
+				928DA54F25401B5600C92635 /* ExportJson.swift */,
 			);
 			path = HealthKitDataCollection;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				92532D69253D3DD400ECADE3 /* AppDelegate.swift in Sources */,
 				92532D6B253D3DD400ECADE3 /* SceneDelegate.swift in Sources */,
 				92532E2C253E794400ECADE3 /* Step.swift in Sources */,
+				928DA55025401B5600C92635 /* ExportJson.swift in Sources */,
 				92532D6D253D3DD400ECADE3 /* ContentView.swift in Sources */,
 				92532DAB253D407100ECADE3 /* HealthStore.swift in Sources */,
 				928DA5452540059100C92635 /* GraphView.swift in Sources */,
