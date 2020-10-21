@@ -40,6 +40,32 @@ struct ContentView: View {
             let data = try encoder.encode(steps)
             let jsonstr :String = String(data: data, encoding: .utf8)!
             print(jsonstr)
+            
+            // output.jsonに書き込み
+            let fileName = "output.json"
+//            if let documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last{
+//                let targetTextFilePath = documentDirectoryFileURL.appendingPathComponent(fileName)
+//                print(targetTextFilePath)
+//                do{
+//                    try jsonstr.write(to: targetTextFilePath, atomically: true, encoding: String.Encoding.utf8)
+//                }catch let error as NSError{
+//                    print("failed to write : \(error)")
+//                }
+//            }
+            
+            do{
+                let fileManager = FileManager.default
+                let docs = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                let path = docs.appendingPathComponent(fileName)
+                print(path)
+                let data = jsonstr.data(using: .utf8)!
+                
+                fileManager.createFile(atPath: path.path, contents: data, attributes: nil)
+            }catch{
+                print(error)
+            }
+            
+            
         }catch{
             print(error.localizedDescription)
         }
