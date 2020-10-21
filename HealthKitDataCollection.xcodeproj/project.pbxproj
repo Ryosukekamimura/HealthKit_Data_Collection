@@ -18,6 +18,7 @@
 		92532D9E253D3FCC00ECADE3 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92532D9D253D3FCC00ECADE3 /* HealthKit.framework */; };
 		92532DAB253D407100ECADE3 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92532DAA253D407100ECADE3 /* HealthStore.swift */; };
 		92532E2C253E794400ECADE3 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92532E2B253E794400ECADE3 /* Step.swift */; };
+		928DA5452540059100C92635 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DA5442540059100C92635 /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		92532D9D253D3FCC00ECADE3 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		92532DAA253D407100ECADE3 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		92532E2B253E794400ECADE3 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		928DA5442540059100C92635 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +115,12 @@
 				92532D6A253D3DD400ECADE3 /* SceneDelegate.swift */,
 				92532D6C253D3DD400ECADE3 /* ContentView.swift */,
 				92532E2B253E794400ECADE3 /* Step.swift */,
+				92532DAA253D407100ECADE3 /* HealthStore.swift */,
 				92532D6E253D3DD600ECADE3 /* Assets.xcassets */,
 				92532D73253D3DD600ECADE3 /* LaunchScreen.storyboard */,
 				92532D76253D3DD600ECADE3 /* Info.plist */,
 				92532D70253D3DD600ECADE3 /* Preview Content */,
-				92532DAA253D407100ECADE3 /* HealthStore.swift */,
+				928DA5442540059100C92635 /* GraphView.swift */,
 			);
 			path = HealthKitDataCollection;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				92532E2C253E794400ECADE3 /* Step.swift in Sources */,
 				92532D6D253D3DD400ECADE3 /* ContentView.swift in Sources */,
 				92532DAB253D407100ECADE3 /* HealthStore.swift in Sources */,
+				928DA5452540059100C92635 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
