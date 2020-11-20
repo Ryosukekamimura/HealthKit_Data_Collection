@@ -11,14 +11,47 @@ import HealthKit
 
 struct ContentView: View {
     
-    private var healthStore: HealthStore?
+    private var healthStoreInstance: HealthStore?
     @State private var steps: [Step] = [Step]()
+    @State private var isAlert: Bool = false
     
     init() {
-        healthStore = HealthStore()
+        healthStoreInstance = HealthStore()
     }
     
-    private func updateUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) {
+    var body: some View {
+        NavigationView {
+            VStack{
+                GraphView(steps: steps)
+                Button(action: {
+                    exportJson()
+                    self.isAlert = true
+                }, label: {
+                    Text("Export Json File")
+                }).alert(isPresented: self.$isAlert, content: {
+                    Alert(title: Text("データを取得しました🙂"))
+                })
+            }
+            .navigationTitle("歩数データの取り出し")
+        }
+        .onAppear {
+            if let healthStore = healthStoreInstance {
+                healthStore.requestAuthorization { success in
+                    if success {
+                        healthStore.calculateSteps { statisticsCollection in
+                            if let statisticsCollection = statisticsCollection {
+                                // update the UI
+                                updateUIFromStatistics(statisticsCollection)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK: FUNCTIONS
+    func updateUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) {
         
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
         let endDate = Date()
@@ -31,8 +64,10 @@ struct ContentView: View {
             steps.append(step)
             
         }
-        
-        // Write to Json
+    }
+    
+    func exportJson() {
+        //MARK: Export Json File
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
         encoder.outputFormatting = .prettyPrinted
@@ -41,18 +76,8 @@ struct ContentView: View {
             let jsonstr :String = String(data: data, encoding: .utf8)!
             print(jsonstr)
             
-            // output.jsonに書き込み
+            // MARK: Write to output.json
             let fileName = "output.json"
-//            if let documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last{
-//                let targetTextFilePath = documentDirectoryFileURL.appendingPathComponent(fileName)
-//                print(targetTextFilePath)
-//                do{
-//                    try jsonstr.write(to: targetTextFilePath, atomically: true, encoding: String.Encoding.utf8)
-//                }catch let error as NSError{
-//                    print("failed to write : \(error)")
-//                }
-//            }
-            
             do{
                 let fileManager = FileManager.default
                 let docs = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -64,52 +89,9 @@ struct ContentView: View {
             }catch{
                 print(error)
             }
-            
-            
         }catch{
             print(error.localizedDescription)
         }
-        
-        
-    }
-    
-    var body: some View {
-        
-        NavigationView {
-        
-            VStack{
-                GraphView(steps: steps)
-                Button(action: {
-                    
-                }, label: {
-                    Text("Export Json File")
-                })
-            }
-
-            
-            
-        .navigationTitle("Just Walking")
-        }
-       
-        
-            .onAppear {
-                if let healthStore = healthStore {
-                    healthStore.requestAuthorization { success in
-                        if success {
-                            healthStore.calculateSteps { statisticsCollection in
-                                if let statisticsCollection = statisticsCollection {
-                                    // update the UI
-                                    updateUIFromStatistics(statisticsCollection)
-                                    
-                                    
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        
-        
     }
 }
 

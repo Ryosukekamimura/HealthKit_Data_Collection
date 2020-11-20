@@ -19,7 +19,7 @@
 		92532DAB253D407100ECADE3 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92532DAA253D407100ECADE3 /* HealthStore.swift */; };
 		92532E2C253E794400ECADE3 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92532E2B253E794400ECADE3 /* Step.swift */; };
 		928DA5452540059100C92635 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DA5442540059100C92635 /* GraphView.swift */; };
-		928DA55025401B5600C92635 /* ExportJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DA54F25401B5600C92635 /* ExportJson.swift */; };
+		92B6C82825678B0E000FC5F2 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B6C82725678B0E000FC5F2 /* Extension+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,7 @@
 		92532DAA253D407100ECADE3 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		92532E2B253E794400ECADE3 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		928DA5442540059100C92635 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
-		928DA54F25401B5600C92635 /* ExportJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportJson.swift; sourceTree = "<group>"; };
+		92B6C82725678B0E000FC5F2 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,18 +112,17 @@
 		92532D67253D3DD400ECADE3 /* HealthKitDataCollection */ = {
 			isa = PBXGroup;
 			children = (
-				92532D9B253D3FCC00ECADE3 /* HealthKitDataCollectionDebug.entitlements */,
+				92B6C83325678C9D000FC5F2 /* ViewModel */,
+				92B6C82F25678B3F000FC5F2 /* Models */,
+				92B6C82625678AFB000FC5F2 /* Extensions */,
+				92B6C82225678A5A000FC5F2 /* Views */,
 				92532D68253D3DD400ECADE3 /* AppDelegate.swift */,
 				92532D6A253D3DD400ECADE3 /* SceneDelegate.swift */,
-				92532D6C253D3DD400ECADE3 /* ContentView.swift */,
-				92532E2B253E794400ECADE3 /* Step.swift */,
-				92532DAA253D407100ECADE3 /* HealthStore.swift */,
+				92532D9B253D3FCC00ECADE3 /* HealthKitDataCollectionDebug.entitlements */,
 				92532D6E253D3DD600ECADE3 /* Assets.xcassets */,
 				92532D73253D3DD600ECADE3 /* LaunchScreen.storyboard */,
 				92532D76253D3DD600ECADE3 /* Info.plist */,
 				92532D70253D3DD600ECADE3 /* Preview Content */,
-				928DA5442540059100C92635 /* GraphView.swift */,
-				928DA54F25401B5600C92635 /* ExportJson.swift */,
 			);
 			path = HealthKitDataCollection;
 			sourceTree = "<group>";
@@ -160,6 +159,39 @@
 				92532D9D253D3FCC00ECADE3 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92B6C82225678A5A000FC5F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92532D6C253D3DD400ECADE3 /* ContentView.swift */,
+				928DA5442540059100C92635 /* GraphView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		92B6C82625678AFB000FC5F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				92B6C82725678B0E000FC5F2 /* Extension+Date.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		92B6C82F25678B3F000FC5F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92532E2B253E794400ECADE3 /* Step.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		92B6C83325678C9D000FC5F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92532DAA253D407100ECADE3 /* HealthStore.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,8 +327,8 @@
 				92532D69253D3DD400ECADE3 /* AppDelegate.swift in Sources */,
 				92532D6B253D3DD400ECADE3 /* SceneDelegate.swift in Sources */,
 				92532E2C253E794400ECADE3 /* Step.swift in Sources */,
-				928DA55025401B5600C92635 /* ExportJson.swift in Sources */,
 				92532D6D253D3DD400ECADE3 /* ContentView.swift in Sources */,
+				92B6C82825678B0E000FC5F2 /* Extension+Date.swift in Sources */,
 				92532DAB253D407100ECADE3 /* HealthStore.swift in Sources */,
 				928DA5452540059100C92635 /* GraphView.swift in Sources */,
 			);
